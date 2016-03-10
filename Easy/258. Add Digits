@@ -1,5 +1,17 @@
 public class Solution {
     public int addDigits(int num) {
-        
+        while((num / 10) >= 1) {
+            num = selfAdd(num);
+        }
+        return num;
+    }
+    
+    public int selfAdd(int num) {
+        int result = 0;
+        do {
+            result += (num % 10);
+            num /= 10;
+        } while(num >= 1);
+        return result;
     }
 }
